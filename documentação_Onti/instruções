@@ -1,0 +1,43 @@
+- Criado por:      Guilherme Pereira de Lima
+- Concluido em:    2019-09-25
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Funcionalidade: 
+
+	Está ferramenta tem os seguntes objetivos:
+		* Apagar todos os arquivos referentes ao software do Gateway de acordo com a versão desejada.
+		* Organizar todos os arquivos nos diretorios corretos para inicializar um novo Gateway de acordo com a versão desejada.
+
+ - Como utilizar:
+	
+	Antes de executar o 'preparaVersao.py' deve ser baixado no diretorio principal do gateway que deseja 
+	trabalhar os seguintes arquivos e diretorios:
+		
+		*nova
+		*antiga
+		*preparaVersao.py
+	
+	com todos os aquivos e diretorios mencionados em '/home/pi' deve ser executado o 'preparaVersao.py'.
+	Ao executar o arquivo aparecerá uma tela interativa para que o usuario escolha uma das duas versoes e
+	oque deseja fazer com a versão escolhida as opções de ação são: apagar os arquivos ou construir os arquivos.
+	após digitar o numero que corresponde a opção desejada pressione enter e então o software se encaregará do 
+	restante, ele organizará todos os arquivos nos diretorios corretos de acordo com a versão escolhida, e fará a 
+	mudança nescessária no inicializador do sistema operacional o 'autostart'.
+	O software apresentará uma mensagem indicando que está executando o comando após a finalização o gateway deve
+	ser reiniciado e o bit 1 deve ser inserido no banco de dados em 'Nuvem_Gateway' no gateway correspondente antes
+	que o gateway volte a ser ligado. 	
+
+
+- Observações:
+
+	O unico arquivo que o software não manipulará será o CLP.py sendo de total responsabilidade do usuario fazer
+	cópia para backup e ou alterar o seu conteúdo para que fique compativel com as propriedades cadastradas no gateway.
+
+	As versões a serem destruidas são sempre aquelas que estão em funcionamento na maquina ou deveriam estar 
+	funcionando, e as que devem ser contruidas serão aquelas que se encontram dentro dos diretorios 'nova' e 'antiga'
+	caso os arquivos destes diretorios não sejam os desejados para montar uma nova versao basta altera-los pelos 
+	que se deseja ("TODOS OS ARQUIVOS QUE FOREM ALTERADOS DEVEM TER COMPATIBILIDADE ENTRE SI E OS NOMES DEVEM SER OS
+	MESMOS ENCONTRADOS DENTRO DO DIRETORIO QUE DESEJA ALTERAR. CASO CONTRARIO PODE NÃO FUNCIONAR !!!").
+
+	 
+	

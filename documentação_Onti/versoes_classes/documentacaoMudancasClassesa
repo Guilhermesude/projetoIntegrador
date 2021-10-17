@@ -1,0 +1,166 @@
+Alterações no classes:
+
+202109141000, a partir da 202106071703:
+Alterada a fórmula de medição de memória em uso (de (int(valMem[1])*100)/int(valMem[0]) para percentage = (int(valMem[0])-int(valMem[5]))*92/int(valMem[0]).
+Alterados os percentuais de memória usada para as ações: de 65% para 75%, de 75% para 85% e de 80% para 92.
+Corrigido de: except: percentage = '00' para :except: percentage = 0
+Instalada nos 2 gateways do Templo.
+
+202109131900, a partir da 202105121647:
+Alterada a fórmula de medição de memória em uso (de (int(valMem[1])*100)/int(valMem[0]) para percentage = (int(valMem[0])-int(valMem[5]))*92/int(valMem[0]).
+Alterados os percentuais de memória usada para as ações: de 65% para 75%, de 75% para 85% e de 80% para 92.
+Corrigido de: except: percentage = '00' para :except: percentage = 0
+Instalada nos 3 gateways do Itahyê.
+
+202103221633:
+Esta versão tem a correção de bugs que ocorriam no BIT 1 montarBDOff, sinalização do evento 45 e um trecho de código possivelmente utilizado para realizar debugs.
+
+202012041222:
+Esta versão contém melhorias e adaptações para funcionar com a versão local e remota (banco de dados) do gateway.
+
+202006221113:
+Com o objetivo de trocar as credenciais do banco de dados online quando necessário, foram feitas alterações na classe mysql, no método  init  foi adicionado uma nova variável com o nome de selfie versão Python que contém a instância do método responsável por encontrar qual das versões do Python 3 o software está sendo executado, este método do qual é feita uma estância teve a necessidade de ser definido da classe MySQL, dessa maneira temos a duplicidade da definição deste método visto que o mesmo já foi definido na classe gateway.
+
+
+
+
+202012041222 => 202103221633
+
+Trecho entra as linhas 1793 a 1801 se tornou comentário com a seguinte mensagem
+(Trecho provavelmente utilizado para comentário)
+
+
+202103221633 => 202105121647
+
+- Em def _thEnviaVar em uma condicional onde é verificado se a variavel 
+  pausa < 0 para a versão mais antiga, na versão mais recente
+  verifica-se se pausa < 15, a variavel pausa é utilizada como sleep dentro 
+  do loop que roda constantemente dentro desta thread;
+
+- O trecho que antes havia sido comentado agora está sem comentários nesta 
+  versão mais recente;
+
+- O print "Finalizou de enviar os eventos" na linha 2470 foi alterado para
+  "Finalizou de enviar os eventos de gateway";
+
+- Em def escreverValores() o comando na linha 2657 responsavel por copiar o arquivo BCK.sql
+  para o diretorio de backup do gateway, se tornou um comentário.
+
+- Em def sendVariaveis foi adicionado o seguinte comentário:
+  # lógica está defeituosa ...
+    """
+    	- Envia_Timestamp_PM deve ser uma variavel acessivel no método sendVariaveis()
+        - Ao rodar o for que fará o envio dos dados ao banco online a verificação do 
+          envio de timestamp deve ocorrer apenas uma vez. 
+        
+    """
+
+202105121647 => 202105211342
+
+- Em loadGateway foi adicionado um sleep de 1 segundo;
+
+- Em loadMaquina o loop que acontecia se houvese internet se tornou loop continuo e
+  foi adicionado a esse loop um sleep de 1 segundo;
+
+- Em loadEvntsGateway loop condicional à internet foi alterado para loop continuo e
+  foi adicionado a esse loop um sleep de 1 segundo;
+
+- Em loadComunicacoes loop condicional à internet foi alterado para loop continuo;
+
+- Em loadVariaveis loop condicional à internet foi alterado para loop continuo;
+
+- Em loadEventos loop condicional à internet foi alterado para loop continuo;
+
+- Em executaCountBD foi retirado o "conn.commit()" da clausula try e adicionado a clausula
+  except "c.close() e conn.close()" em todas as demais rotinas referentes ao banco de dados 
+  quando se abre uma conexão foi feito o mesmo que o mencionado acima;
+
+ 202105211342 => 202106071703
+
+- Em def salvarTudo foi adicionado o trecho:
+
+	 try:
+            for maq in self.maquina:
+                for var in maq.variavel:
+##                    print('variaveis',var.tipoVariavel.cod)
+##                    print('Retentividade',var.retentividade)
+                                  
+                    if var.tipoVariavel.cod == 6 and bool(var.retentividade):
+
+##                        print('valor',var.valor)
+##                        print('NovoValor',var.novoValor)
+##                        print('NovoValor',var.cod)
+                                                    
+                        SQL = "UPDATE Nuvem_Propriedades_Maquina SET Valor = '" +str(var.valor)+ "', Novo_Valor = '" +str(var.valor)+ "' WHERE Cod_Propriedade_Maquina = '" +str(var.cod)+ "'"
+                        print(mysql.executaQueryBD(SQL,False))
+
+##                        print(SQL)
+                        
+        except:
+            print('Erro ao salvar variaveis internas de leitura.')
+
+
+- Em getValVariaveis foi adicionado o seguinte trecho:
+
+	elif conjVar.tipoVariavel.tipo == 'IL' and self.variaveisInternas != None:
+
+                        #booleano
+                        #inteiro
+                        #real
+                        #longa
+                        #inteira CS
+                        #longa CS
+                        #print('tipovalor = ',IL[conjVar.tipoValor])
+                        #print('casasDecimais = ',IL[conjVar.tipoValor])
+                        #try:
+                            #print(conjVar.tipoValor.cod)
+                            #print(conjVar.tipoValor.tipo)
+                        #except:
+                            #print('erro ao imprimir self.pacotesVar')
+
+                        if conjVar.tipoValor.cod == 1:
+                            IL[conjVar.nome] = bool(conjVar.valor)
+
+                        elif conjVar.tipoValor.cod == 2 or conjVar.tipoValor.cod == 4 or conjVar.tipoValor.cod == 6 or conjVar.tipoValor.cod == 7:
+                            IL[conjVar.nome] = int(conjVar.valor)
+
+                        elif conjVar.tipoValor.cod == 3:
+                            IL[conjVar.nome] = float(conjVar.valor)
+
+                        elif conjVar.tipoValor.cod == 5:
+                            IL[conjVar.nome] = str(conjVar.valor)
+
+  e teve o seguinte trecho comentado:
+
+	 #try:    IL[conjVar.nome] = int(conjVar.valor)
+         #except: IL[conjVar.nome] = float(conjVar.valor)
+                       
+
+202106071703 => 202106211608
+
+- Em loadVariaveis na condicional responsavel por verificar se a variavel é retentiva ou não,
+  foi adicionado algoritmo para manter o valor que retorna do banco de dados, caso o valor do banco
+  seja vazio e o tipo = 4 define-se a variavel com o valor 6553, caso seja qualquer outro tipo
+  é então definida com valor 0;
+
+- Em getValVariaveis foi adicionado as clausulas try/except para todas as condicionais que verificam
+  o tipo de propriedade de maquina e também uma condicional para identificar qual o tipo de valor
+  definido pelo usuario para a variavel em questão;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

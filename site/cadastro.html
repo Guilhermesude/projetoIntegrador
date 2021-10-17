@@ -1,0 +1,153 @@
+<?php 
+
+?>	
+
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+
+	<body >
+        <form id="cadastroTitular" action="envioDados.php" method="POST">
+           
+            <br><bR><br><br><br>
+ 
+            <label from="nomeCompleto">Nome Completo</label>
+            <input name="nome" type="text" id="nomeCompleto">
+
+            <br>
+
+            <label from="endereco">Endereço</label>
+            <input name="endereco" type="text" id="endereco">
+
+            <br>
+
+            <label from="complemento">Complemento para o endereço</label>
+            <input name="complemento" type="text" id="complemento">
+
+            <br>
+
+            <label from="bairro">Bairro</label><!--Refletir a posibilidade de colocar um select para escolher bairros cadastrados -->
+            <input name="bairro" type="text" id="bairro">
+
+            <br>
+
+            <label from="cep">CEP</label><!--Verificar a posibilidade de usar o sistema do correios para autocompletar os campos de endereço-->
+            <input name="cep" type="text" id="cep">
+
+            <br>
+
+            <label from="cidade">Cidade</label>
+            <input name="cidade" type="text" id="cidade">
+
+            <br>
+
+            <label from="estado">Estado</label>
+            <input name="estado" type="text" id="estado">
+
+            <br>
+
+            <label from="naturalidade">Naturalidade</label><!--Verificar a posibilidade de colocar um select com os estados do brasil API-->
+            <input name="naturalidade" type="text" id="naturalidade">
+
+            <br>
+
+            <label from="dataNascimento">Data de nascimento</label><!--Consultar outro tipo de input name="" para datas-->
+            <input name="dataNascimento" type="text" id="dataNascimento">
+
+            <br>
+
+            <label from="estadoCivil">Estado cívil</label><!--Trocar o input name="" por um select com os possiveis estatos civil-->
+            <input name="estadoCivil" type="text" id="estadoCivil">
+
+            <br>
+
+            <label from="sexo">Sexo</label><!--utilizar botões de radio para descrição de sexo--> 
+            <input name="sexo" type="text" id="sexo">
+
+            <br>
+
+            <label from="escolaridade">Escolaridade</label><!--Select com os possiveis níveis de escolaridade-->
+            <input name="escolaridade" type="text" id="escolaridade">
+            
+            <br>
+
+            <label from="profissao">Profissão</label><!--Considera a posibilidade de colocar um select-->
+            <input name="profissao" type="text" id="profissao">
+            
+            <br>
+
+            <label from="renda">Renda do titular</label><!--Verificar a possibilidade de definir opções com limites maximos e minimos em um select-->
+            <input name="renda" type="text" id="renda">
+            <br>
+
+            <label from="telefone">Número de telefone para contato</label>
+            <input name="telefone" type="tel" id="telefone">
+            <br>
+
+            <label from="celular">Número de celular para contato</label>
+            <input name="celular" type="tel" id="celular">
+            <br>
+
+            <label from="telefoneRec">Telefone para recado</label>
+            <input name="telRecado" type="text" id="telefoneRec">
+            <br>
+
+            <label from="e_mail">Email principal</label>
+            <input name="e_mail" type="email" id="e_mail">
+
+            <br>
+
+            <label from="facebook">Facebook</label>
+            <input name="facebook" type="text" id="facebook">
+            
+            <br>
+
+            <label from="idSocial">Número de identificação social - NIS</label>
+            <input name="nis" type="text" id="idSocial">
+            
+            <br>
+
+            <label from="registroNasc">Número do RG</label>
+            <input name="rg" type="text" id="registroNasc">
+            
+            <br>
+
+            <label from="cpf">Número do CPF</label>
+            <input name="cpf" type="text" id="cpf">
+            
+            <br>
+
+            <label from="tituloEleitoral">Número do titulo eleitoral</label>
+            <input name="titulo" type="text" id="tituloEleitoral">
+            
+            <br>
+
+            <label from="zonaEleitoral">Zona eleitoral</label>
+            <input name="zonaEleitoral" type="text" id="zonaEleitoral">
+            
+            <br>
+            
+            <label from="sessaoEleitoral">Sessão eleitoral</label>
+            <input name="sessaoEleitoral" type="text" id="sessaoEleitoral">
+            
+            <br>
+            
+            <label from="moradia">moradia</label>
+            <input name="moradia" type="text" id="moradia">
+            
+            <br>
+            
+            
+            <button type="submit">Cadastrar</button>
+
+        </form>
+        
+			
+	</body>
+</html> 
+
+

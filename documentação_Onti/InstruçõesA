@@ -1,0 +1,4 @@
+Deve ser baixado no diretorio "/home/pi" todos os diretorios e arquivos contidos
+no diretorio onde está instrução está salva.
+
+após ter sido baixado execute o "praparaVersao.py" selecione a opção desejada.

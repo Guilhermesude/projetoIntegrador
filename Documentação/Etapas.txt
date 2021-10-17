@@ -1,0 +1,4 @@
+- Site navegavel com imagens de fundo
+    -
+- pagina de login para administradores
+- formularios para cadastro dos assosiados

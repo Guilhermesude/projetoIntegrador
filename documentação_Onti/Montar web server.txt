@@ -1,0 +1,64 @@
+*** Tutorial para montar web server no raspberry ***
+referencia:https://tidahora.com.br/servidor-web-com-apache2-php-e-mysql-no-ubuntu-linux/
+
+- Servidor apache
+- PHP 
+- mysqlServer
+
+
+1 - Atualize as bibliotecas do sistema executando esses comandos no terminal.
+	
+	sudo apt-get update
+
+2 - Instalação do apache.
+
+	sudo apt-get install apache2
+
+3 - Define um nome para o servidor.
+
+	sudo nano /etc/apache/apache2.conf
+	"No final do arquivo insira o novo nome do servidor"
+		'ServerName (Nome desejado)'
+
+4 - Comando para testar a syntaxe de configuração do servidor.
+
+	sudo apache2ctl configtest
+	"O retorno deve ser (Syntax OK)"
+
+5 - Para iniciar o apache.
+
+	sudo systemctl start apache2
+
+6 - Para verrificar se esta operando.
+
+	sudo systemctl status apache2
+	"Procure por (Active: active (running) )"
+	
+	e então digite no navegador de um computador que esteja na 
+	mesma rede do raspberry o ip do mesmo ou no navegador do proprio 
+	raspberry, deve aparecer uma pagina web com explicações.
+
+7 - Instalação do mysql.
+
+	sudo apt-get istall mysql-server
+	"Se voce ja tiver montado uma imagem do raspberry seguindo 
+	os tutoriais para montar uma imagem nao vai pressisar configurar
+	o mysql neste momento".
+
+8 - Instalação do PHP.
+
+	sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+	sudo nano /var/www/html/info.php
+	"Após criar esse arquivo insira nele":
+	
+	<?php 
+		phpinfo();
+	?>
+
+	"salve o arquivo"
+
+9 - Reinicie o apache pois todo sistema esta configurado.
+
+	sudo systemctl restart apache2 
+
+10 - digite novamente em algum navegador o ip seguido do nome do arquivo que criamos. 

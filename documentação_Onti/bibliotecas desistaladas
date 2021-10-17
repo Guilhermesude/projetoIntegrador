@@ -1,0 +1,19 @@
+sudo pip3 install mysql-connector-python
+sudo apt-get mariadb-server
+sudo apt-get install mariadb-server *
+sudo apt-get install mariadb-client *
+sudo mysql_install_db
+sudo systemctl start mariadb.service
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+sudo systemctl start mariadb.service -password; sudo systemctl enable mariadb.service -password
+sudo systemctl status mariadb.service
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf.save
+/usr/bin/mysql_install_db --defaults-file=~/.my.cnf
+/usr/sbin/mysqld --skip-grant-tables --general-log &
+ sudo mysql.service restart
+sudo /usr/local/mysql/support-files/mysql.server start
+sudo /etc/init.d/mysqld restart
+sudo cp -R -p /var/lib/mysql/* /mnt/ramdisk
+sudo nano /etc/mysql/mariadb.conf.d/50-mysqld_safe.cnf
+sudo chmod 777 /etc/mysql/mariadb.conf.d/50-mysql-clients.cnf 
+sudo python3 -m pip install pymysql 	
