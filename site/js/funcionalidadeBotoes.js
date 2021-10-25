@@ -13,5 +13,8 @@ function navegacao(elemento){
     }else if(elemento == 'projetos'){
         $('#corpoDoSite').load('projetos.html');
 
+    }else if(elemento == 'associados'){
+        $('#corpoDoSite').load('login.html');
+
     }
 }
