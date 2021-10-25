@@ -1,0 +1,37 @@
+#logoPrincipal{
+    width: 100%;
+    height: 140px;
+    background-color: darkolivegreen;
+}
+
+.botoesNavegacao{
+    color: white;
+}
+
+
+#tituloCeprocig{
+    text-align: center;
+    color: white;
+    font-size: 70px;
+}
+
+#corpoDoSite{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+    margin:auto;
+    background-color:#a1cc70;
+    font-family:Arial;
+    color:#fff; 
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color:darkolivegreen;
+    width: 100%;
+    height: 80px;    
+    text-align: center;
+    line-height: 100px;
+}

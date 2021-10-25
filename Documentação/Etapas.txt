@@ -1,4 +1,3 @@
-- Site navegavel com imagens de fundo
-    -
-- pagina de login para administradores
-- formularios para cadastro dos assosiados
+-- Construir a estrutura do site navegavel (backend/estática/jquery)
+-- construir pagina de login dos administradores (backend).
+-- adcionar as imagens em todas as paginas do site conforme projetado.
