@@ -1,5 +1,4 @@
 function navegacao(elemento){
-    alert(elemento);
     
     $('#corpoDoSite').html('');
 
@@ -18,3 +17,5 @@ function navegacao(elemento){
 
     }
 }
+
+
