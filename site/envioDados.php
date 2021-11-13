@@ -35,6 +35,6 @@
 
     echo $dadosTitular;
                     
-    header('Location:index.html');
+    //header('Location:/site');
 
 ?>

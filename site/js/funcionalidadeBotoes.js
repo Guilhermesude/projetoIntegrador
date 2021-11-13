@@ -1,3 +1,4 @@
+
 function navegacao(elemento){
     
     $('#corpoDoSite').html('');
@@ -19,3 +20,7 @@ function navegacao(elemento){
 }
 
 
+$('#dadosLogin').click(function(){
+
+    console.log('funcionou!!!');
+});
