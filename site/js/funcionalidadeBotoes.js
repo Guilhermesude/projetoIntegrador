@@ -22,5 +22,13 @@ function navegacao(elemento){
 
 $('#dadosLogin').click(function(){
 
-    console.log('funcionou!!!');
+    dadosForm = $('#login').serialize();
+    
+    $.post('envioDados.php?'+dadosForm,function(data){
+        console.log(data);
+        if(data){
+            $('#corpoDoSite').load('cadastro.html');
+        }
+    });
+    
 });
