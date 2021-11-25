@@ -14,7 +14,7 @@ function navegacao(elemento){
         $('#corpoDoSite').load('projetos.html');
 
     }else if(elemento == 'associados'){
-        $('#corpoDoSite').load('login.html');
+        $('#corpoDoSite').load('login.php');
 
     }
 }
@@ -27,7 +27,7 @@ $('#dadosLogin').click(function(){
     $.post('envioDados.php?'+dadosForm,function(data){
         console.log(data);
         if(data){
-            $('#corpoDoSite').load('cadastro.html');
+            $('#corpoDoSite').load('cadastro.php');
         }
     });
     

@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Document</title>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estiloBase.css" type="text/css">
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/funcionalidadeBotoes.js" defer></script>
 </head>
 <body>
 
     <div name="logoCeprocig" id="logoPrincipal">
         <h1 id="tituloCeprocig">CEPROCIG</h1>
         
-        <button onclick="navegacao(id)" id="sobre" type="button" class="btn btn-link botoesNavegacao">Sobre nós</button>
+        <!--<button onclick="navegacao(id)" id="sobre" type="button" class="btn btn-link botoesNavegacao">Sobre nós</button>
         <button onclick="navegacao(id)" id="institucional" type="button" class="btn btn-link botoesNavegacao">Institucional</button>
         <button onclick="navegacao(id)" id="projetos" type="button" class="btn btn-link botoesNavegacao">Projetos</button>
         <button onclick="navegacao(id)" id="associados" type="button" class="btn btn-link botoesNavegacao">Associados</button>        
-        <button onclick="navegacao(id)" id="contatos" type="button" class="btn btn-link botoesNavegacao">Contatos</button>
+        <button onclick="navegacao(id)" id="contatos" type="button" class="btn btn-link botoesNavegacao">Contatos</button>-->
+        
+        
+        <nav class=" navbar-expand-lg  ">
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a onclick="navegacao(id)" id="sobre" class="nav-link botoesNavegacao" href="#">Sobre nós</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a onclick="navegacao(id)" id="institucional" class="nav-link botoesNavegacao" href="#">Institucional</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a onclick="navegacao(id)" id="projetos" class="nav-link botoesNavegacao" href="#">Projetos</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle botoesNavegacao" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Associados
+                        </a>
 
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Entrar</a>
+                            <a class="dropdown-item" href="#">Sair</a>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Consultar</a>
+                            <a onclick="navegacao(id)" id="associados" class="dropdown-item" href="#">Cadastrar</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a onclick="navegacao(id)" id="contatos" class="nav-link botoesNavegacao" href="#">Contatos</a>
+                    </li>
+              </ul>
+              
+            </div>
+          </nav>
+        
     </div>
 
     <div id="corpoDoSite">
-
+        
     </div>
-    
-    <footer>
-        <p>esse é o fim da pagina</p>
-    </footer>
-    
+    <footer class="m-grid__item		m-footer ">
+        <div class="m-container m-container--fluid m-container--full-height m-page__container">
+            <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+                <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+                    <span class="m-footer__copyright">
+                        2018 &copy; <a href="http://onti.com.br" class="m-link">
+                            Onti
+                        </a> 
+                        Automação, Tecnologia e Comércio Ltda. 
+                        
+                    </span>
+                </div>
 
-    
-    
+            </div>
+        </div>
+    </footer>
 </body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/funcionalidadeBotoes.js" defer></script>
+
 
 </html>

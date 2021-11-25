@@ -2,7 +2,7 @@
 
   /*Inclue o arquivo credenciaisBanco.php para utilizar as suas variaveis para se conectar ao banco de dados */
   include_once 'credenciaisBanco.php';
-
+  session_start();
   extract($_POST);
   extract($_GET);
   //print_r($dadosForm);
@@ -26,9 +26,9 @@
   /** Cria variaveis de sessão e permite o carregamento da pagina de cadastro */
   if(!empty($result[0]['Cod_Usuario'])){
 
-    $_SESSION['Usuario']     = $result[0]['Nome_de_Usuario'];
-    $_SESSION['TipoUsuario'] = $result[0]['Tipo_de_Usuario'];
-    $_SESSION['Cod_Usuario'] = $result[0]['Cod_Usuario'];
+    $_SESSION['Usuario']      = $result[0]['Nome_de_Usuario'];
+    $_SESSION['TipoUsuario']  = $result[0]['Tipo_de_Usuario'];
+    $_SESSION['Cod_Usuario']  = $result[0]['Cod_Usuario'];
     
     echo 'true';
 
