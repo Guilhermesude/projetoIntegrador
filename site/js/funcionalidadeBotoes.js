@@ -13,8 +13,11 @@ function navegacao(elemento){
     }else if(elemento == 'projetos'){
         $('#corpoDoSite').load('projetos.html');
 
-    }else if(elemento == 'associados'){
-        $('#corpoDoSite').load('login.php');
+    }else if(elemento == 'cadastrar'){
+        $('#corpoDoSite').load('cadastro.php');
+
+    }else if(elemento == 'consultar'){
+        $('#corpoDoSite').load('consulta.php');
 
     }
 }
@@ -27,8 +30,13 @@ $('#dadosLogin').click(function(){
     $.post('envioDados.php?'+dadosForm,function(data){
         console.log(data);
         if(data){
-            $('#corpoDoSite').load('cadastro.php');
+            $('#corpoDoSite').load('login.php');
         }
     });
     
+});
+
+$('#logout').click(function(){
+    console.log('Saindo da pagina');
+    window.location = 'logout.php';
 });
