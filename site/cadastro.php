@@ -1,7 +1,15 @@
-
+<?php 
+  session_start();
+  //print_r($_SESSION);
+  if(empty($_SESSION['Cod_Usuario'])){
+      
+      $_SESSION['paginaAtual'] = 'cadastro.php';
+      header('location:login.php');
+  }
+?>
 
 <div>
-  <form class="row g-3" style="margin-left: 30px;" >
+  <form class="row g-3" style="margin-left: 30px;" action="cadastroAssociados.php" method="POST">
       <div class="col-md-8">
         <label for="nomeCompleto" class="form-label">Nome do titular</label>
         <input name="nome" class="form-control" type="text" id="nomeCompleto" placeholder="Nome completo" >
@@ -32,12 +40,12 @@
         <input name="cep" class="form-control" type="text" id="cep" placeholder="01234-569">
       </div>
       
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="cidade" class="form-label">Cidade</label>
         <input name="cidade" class="form-control" type="text" id="cidade" placeholder="São paulo">
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="estado" class="form-label">Estado</label>
         <select id="estado" name="estado" class="form-select form-control">
           <option disabled value="" selected>Selecionar</option>
@@ -71,6 +79,20 @@
           <option value="EX">Estrangeiro</option>
       </select>
       </div>
+
+      <div class="col-md-2">
+        <label for="moradia" class="form-label">Moradia</label>
+        <select id="moradia" name="moradia" class="form-select form-control">
+          <option disabled value="" selected>Selecionar</option>
+          <option value="Aluguel">Aluguel</option>
+          <option value="Cedida">Cedida</option>
+          <option value="Favela">Favela</option>
+          <option value="Ocupacao">Ocupação</option>
+          <option value="Area_livre">Área livre</option>
+          <option value="Area_risco">Área de risco</option>
+      </select>
+      </div>
+
 
       <div class="col-md-3">
         <label for="naturalidade" class="form-label">Naturalidade</label>

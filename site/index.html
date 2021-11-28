@@ -17,7 +17,7 @@
     <script type="text/javascript" src="js/funcionalidadeBotoes.js" defer></script>
 </head>
 <body>
-
+    
     <div name="logoCeprocig" id="logoPrincipal">
         <h1 id="tituloCeprocig">CEPROCIG</h1>
         
@@ -50,8 +50,10 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a  id="consultar" class="dropdown-item" href="cadastro.php">Consultar</a>
+                            <a onclick="navegacao(id)" id="consultar" class="dropdown-item" href="#">Consultar</a>
                             <a onclick="navegacao(id)" id="cadastrar" class="dropdown-item" href="#">Cadastrar</a>
+                            <a onclick="navegacao(id)" id="cadastrarADM" class="dropdown-item" href="#">Cadastrar ADM</a>
+                            
                                 <div class="dropdown-divider"></div>
                             <a class="dropdown-item" id="logout" href="#">Sair</a>
                         </div>
@@ -68,17 +70,21 @@
     </div>
 
     <div id="corpoDoSite">
-        
+        <img src="imagens/WhatsApp Image 2021-11-28 at 19.31.50.jpeg" alt="some text" width=512 height=460>
+        <img src="imagens/tralhando_agua1.jpg" alt="some text" width=512 height=460>
+        <img src="imagens/foto_4.jpg" alt="some text" width=512 height=460>
     </div>
-    <footer class="m-grid__item		m-footer ">
+    <footer id="fimPagina" class="m-grid__item		m-footer ">
         <div class="m-container m-container--fluid m-container--full-height m-page__container">
             <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
                 <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
                     <span class="m-footer__copyright">
-                        2018 &copy; <a href="http://onti.com.br" class="m-link">
-                            Onti
+                        <a href="https://www.facebook.com/CEPROCIG-518984344780970/" class="m-link">
+                            <img src="imagens/Facebook3.png" alt="some text" width=120 height=120 style="margin-left: 30px;">     
                         </a> 
-                        Automação, Tecnologia e Comércio Ltda. 
+                        <p style="float:right; color: cyan; margin-top: 50px; margin-right: 150px;">
+                            “ Nem sempre quem luta vence. Mas, os que venceram, lutaram. J.L.S.”
+                        </p>
                         
                     </span>
                 </div>

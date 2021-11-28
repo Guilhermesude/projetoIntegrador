@@ -30,10 +30,12 @@
     $_SESSION['TipoUsuario']  = $result[0]['Tipo_de_Usuario'];
     $_SESSION['Cod_Usuario']  = $result[0]['Cod_Usuario'];
     
-    echo 'true';
-
+    
+    $lista = ['statos'=>true,'pagina'=>$_SESSION['paginaAtual']];
+    echo json_encode($lista);
   }else{
-    echo 'false';
+    $lista = ['statos'=>false,'pagina'=>$_SESSION['paginaAtual']];
+    echo json_encode($lista);
   }
 /** Inserção de novos dados de associados -------------------------------------------------------------------------------------------------------- 
 

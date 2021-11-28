@@ -19,18 +19,26 @@ function navegacao(elemento){
     }else if(elemento == 'consultar'){
         $('#corpoDoSite').load('consulta.php');
 
+    }else if(elemento == 'cadastrarADM'){
+        $('#corpoDoSite').load('cadastrarADM.php');
+
     }
 }
 
 
 $('#dadosLogin').click(function(){
-
+    console.log('clicou');
     dadosForm = $('#login').serialize();
     
     $.post('envioDados.php?'+dadosForm,function(data){
-        console.log(data);
-        if(data){
-            $('#corpoDoSite').load('login.php');
+        
+        var dados = JSON.parse(data);
+        console.log(dados['statos']);
+        console.log(dados['pagina']);
+        if(dados['statos']){
+            $('#corpoDoSite').load(dados['pagina']);
+        }else{
+            alert('Usuário e ou senha invalidos !');
         }
     });
     

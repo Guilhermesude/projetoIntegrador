@@ -1,18 +1,3 @@
-<?php 
-    session_start();
-    echo $_SESSION['Cod_Usuario'];
-    
-    if(!empty($_SESSION['Cod_Usuario'])){
-        
-        header('location:'.$pagina);
-        echo 'pagina de seleção de ações para ADM';
-    
-    }else{
-        session_unset();
-        session_destroy();
-    }
-?>
-
 <form name="login" id="login" action="envioDados.php">
 
     <label from="email">Email</label>
