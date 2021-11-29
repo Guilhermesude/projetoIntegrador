@@ -1,9 +1,0 @@
-1° Inicialização (supervisor)
-	- Momento em que ocorre a construção do servidor do banco de dados.
-
-2° Backup dos dados contidos no banco online
-	- Pode ser temporizado ou seguir o mesmo padrão realizado no banco offline.
-
-3° Credenciais
-	- As credenciais devem ser criptografadas com os dados dos bacos on line e offline.
-
