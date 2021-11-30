@@ -1,8 +1,8 @@
 <?php 
     include_once 'credenciaisBanco.php';
-    print_r($_POST);
+    //print_r($_POST);
 
-    echo '<br><br><br>',count($_POST),'<br><br><br>';
+    //echo '<br><br><br>',count($_POST),'<br><br><br>';
     extract($_POST); 
 
 /** Inserção de novos dados de associados -------------------------------------------------------------------------------------------------------- */
@@ -34,8 +34,9 @@
                             
     
     $db->query($dadosTitular);
-
-     echo $dadosTitular;
+    
+    header('location:index.html');
+     //echo $dadosTitular;
   
 
 
